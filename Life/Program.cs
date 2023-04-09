@@ -117,6 +117,18 @@ namespace cli_life
             string json = File.ReadAllText("settings.json");
             board = JsonConvert.DeserializeObject<Board>(json);
         }
+        public int GetWidth()
+        {
+            return board.Width;
+        }
+        public int GetHeight()
+        {
+            return board.Height;
+        }
+        public int GetCellSize()
+        {
+            return board.CellSize;
+        }
         public void Render()
         {
             for (int row = 0; row < board.Rows; row++)

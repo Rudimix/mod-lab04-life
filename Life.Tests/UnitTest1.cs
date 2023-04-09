@@ -11,34 +11,29 @@ namespace Life.Test
         [TestMethod]
         public void TestMethod1()
         {
-            Board board;
-            Program p = new Program();
-            string json = File.ReadAllText("settings.json");
-            board = JsonConvert.DeserializeObject<Board>(json);
-            Assert.AreEqual(board.CellSize, 1);
+            LifeGame LG = new LifeGame();
+            LG.Reset();
+            Assert.AreEqual(LG.GetCellSize(), 1);
         }
         [TestMethod]
         public void TestMethod2()
         {
-            Board board;
-            Program p = new Program();
-            string json = File.ReadAllText("settings.json");
-            board = JsonConvert.DeserializeObject<Board>(json);
-            Assert.AreEqual(board.Width, 100);
+            LifeGame LG = new LifeGame();
+            LG.Reset();
+            Assert.AreEqual(LG.GetWidth(), 100);
         }
         [TestMethod]
         public void TestMethod3()
         {
-            Board board;
-            Program p = new Program();
-            string json = File.ReadAllText("settings.json");
-            board = JsonConvert.DeserializeObject<Board>(json);
-            Assert.AreEqual(board.Height, 20);
+            LifeGame LG = new LifeGame();
+            LG.Reset();
+            Assert.AreEqual(LG.GetHeight(), 20);
         }
         [TestMethod]
         public void TestMethod4()
         {
             LifeGame LG = new LifeGame();
+            LG.Reset();
             LG.ReadBoard("test_output.txt");
             Assert.AreEqual(LG.CountAliveCells(), 64);
         }
@@ -46,6 +41,7 @@ namespace Life.Test
         public void TestMethod5()
         {
             LifeGame LG = new LifeGame();
+            LG.Reset();
             LG.ReadBoard("test_output.txt");
             Assert.AreEqual(LG.BlocksCount(), 3);
         }
